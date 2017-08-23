@@ -26,8 +26,16 @@ function kill {
     tmux select-layout -t hackscreen tiled
 }
 
+cycleCount=0
+sleepValue=1
+
 while true; do
-sleep $[$RANDOM%5 + 2]
+cycleCount=$[$cycleCount + 1]
+if (( $cycleCount > $[10 / $sleepValue] )); then
+  sleepValue=$[$RANDOM%5 + 2]
+  cycleCount=0;
+fi
+sleep $sleepValue
 
 if (( $(tmux list-panes -t hackscreen | wc -l) > 5 )); then
 kill
