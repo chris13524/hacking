@@ -1,6 +1,6 @@
 #!/bin/bash
 
-speed=`python -c "print $RANDOM % 10.0 / 50.0"`
+speed=`python3 -c "print($RANDOM % 10.0 / 50.0)"`
 
 while true; do
     md5sum <<< `date +%N` | head -c -1
