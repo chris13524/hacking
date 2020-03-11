@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
 
 speed=`python3 -c "print($RANDOM % 10.0 / 50.0)"`
 
